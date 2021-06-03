@@ -203,13 +203,13 @@ if (isset($_SESSION['acc'])) {
           }
 
           if ($con->query($table_saql) === TRUE) {
-            header("location:front.php");
+            header("location:index.php");
             session_destroy();
           } else {
             echo "Error updating record: " . $con->error;
           }
         } else {
-          header("location:front.php");
+          header("location:index.php");
           session_destroy();
         }
       }
@@ -253,6 +253,8 @@ if (isset($_SESSION['acc'])) {
               title: 'Successful!',
               text: 'Successfully Reserved!',
               icon: 'success',
+            }).then(function(){
+              window.location='main.php';
             });
           </script>
 
@@ -271,7 +273,9 @@ if (isset($_SESSION['acc'])) {
             title: 'Successful!',
             text: 'Successfully Reserved!',
             icon: 'success',
-          });
+          }).then(function(){
+              window.location='main.php';
+            });
         </script>
 
 
