@@ -117,7 +117,7 @@ include './php/dbconnect.php';
                     text: 'Successfully Sent!',
                     icon: 'success',
                   }).then(function() {
-                    window.location = "front.php";
+                    window.location = "index.php";
                   });
                 </script>
 
@@ -136,7 +136,7 @@ include './php/dbconnect.php';
                   text: 'Come Again',
                   icon: 'success',
                 }).then(function() {
-                  window.location = "front.php";
+                  window.location = "index.php";
                 });
               </script>
 
