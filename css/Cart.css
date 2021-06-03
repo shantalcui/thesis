@@ -1,0 +1,268 @@
+body {
+  background-color: darkred;
+	margin: 0;
+}
+
+/*------------NAV BAR-----------*/
+.navbar {
+	display: flex;
+	height: 100px;
+	width: 100%;
+}
+
+.logo {
+	width: 125px;
+	height: 70px;
+	padding: 0px 0px 0px 25px;
+	position: relative;
+	top: 15px;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: auto;
+	background-color: black;
+	width: 100%;
+	height:100px;
+	position: sticky;
+	top: 0;
+	box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.4);
+}
+
+.search {
+	position: relative;
+	top: -43px;
+	display: in-block;
+	height: 40px;
+	width: 780px;
+	padding: 0;
+	margin: 0;
+	margin: auto;
+	background-color: transparent;
+}
+
+.search input{
+	color: white;
+	text-indent: 5px;
+	height: 40px;
+	width: 650px;
+	padding: padding: 5px 8px 8px;
+	border: 2px solid white;
+	border-radius: 20px;
+	background-color: transparent;
+	outline: none;
+}
+
+.search button {
+	color: white;
+	height: 40px;
+	width: 70px;
+	margin: 0;
+	padding: padding: 5px 8px 8px;
+	border: 2px solid white;
+	border-radius: 2px;
+	vertical-align: middle;
+	background-color: darkred;
+	text-align: center;
+	border: 2px solid darkred;
+	border-radius: 20px;
+	display: in-block;
+	cursor: pointer;
+	outline: none;
+}
+
+li {
+	height: 40px;
+	float: right;
+	font-size: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	position: relative;
+	top: -90px;
+	right: 30px;
+}
+
+li a {
+	display: inline-block;
+	color: white;
+	text-align: center;
+	padding: 20px;
+	text-decoration: none;
+}
+
+li a:hover {
+	color: white;
+}
+
+li a:active {
+	background-color: #555;
+}
+
+sup {
+	position: absolute;
+	left: -1px;
+	color: white;
+	padding: 5px 10px;
+	font-size: 12px;
+	background-color: darkred;
+	border-radius: 50%;
+}
+
+/*-----CART------*/
+.container {
+	position: relative;
+	top: 25%;
+	left: 10%;
+	width: 75%;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: white;
+	padding: 5px 20px 15px 20px;
+	border: 1px solid white;
+	border-radius: 3px;
+}
+
+.container_receipt {
+	position: relative;
+	top: 25%;
+	left: 25%;
+	width: 50%;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: white;
+	padding: 5px 20px 15px 20px;
+	margin: 20px;
+	border: 1px solid white;
+	border-radius: 3px;
+}
+
+/*------HEADER------*/
+.header {
+	display: flex;
+	font-weight: bold;
+}
+
+.order {
+	width: 20%;
+	padding-right: 300px;
+}
+
+.unit_price {
+	width: 20%;
+}
+
+.qty {
+	width: 20%;
+}
+
+.total_price {
+	width: 20%;
+}
+
+.action {
+	width: 20%;
+}
+
+/*-----BILLOUT-----*/
+.order_billout {
+	width: 20%;
+	padding-right: 200px;
+	display: flex;
+	align-items: center;
+}
+
+.unit_price_billout {
+	width: 20%;
+	padding-left: 40px;
+}
+
+.qty_billout {
+	width: 20%;
+	padding-left: 10px;
+}
+
+.total_price_billout {
+	width: 20%;
+	padding-left: 10px;
+}
+
+.action_billout {
+	display: none;
+}
+
+/*-----RECEIPT-----*/
+.qty_receipt {
+	padding-left: 10px;
+}
+
+.order_name_receipt {
+	width: 290px;
+	margin-left: 10px;
+	margin-right: 55px;
+}
+
+p{
+	margin-top:0;
+	color: darkgray;
+}
+/*-----ITEMS-----*/
+.order_list {
+	display: flex;
+	align-items: center;
+}
+
+img {
+	height: 75px;
+	width: 75px;
+}
+
+.order_name {
+	width: 300px;
+	margin-left: 10px;
+	margin-right: 55px;
+}
+
+input {
+	width: 30px;
+	margin-left: 10px;
+	outline: none;
+}
+
+button {
+	background-color: darkred;
+	color: white;
+	padding: 12px;
+	border: none;
+	border-radius: 20px;
+	cursor: pointer;
+	font-size: 12px;
+	outline: none;
+	letter-spacing: 2px;
+}
+
+button:hover {
+  background-color: darkred;
+}
+
+button:active {
+  background-color: darkred;
+}
+
+hr {
+  border: 1px solid black;
+}
+
+.remove {
+	border-radius: 5px;
+}
+
+.SubTotal {
+	text-align: center;
+	font-size: 20px;
+}
+
+.place_order {
+	width: 100%;
+}
+.shan{
+	font-family: Montserrat;
+}

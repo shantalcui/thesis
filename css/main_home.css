@@ -1,0 +1,403 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+body {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* -- NAVBAR -- */
+.navbar-nav a {
+	color: #ffffff;
+	margin: 0 20px;
+}
+
+.navbar-toggler {
+	color: #ffffff;
+	border: none !important;
+	border: none !important;
+	outline: none !important;
+}
+
+.navbar-toggler .fas {
+	color: #ffffff;
+	font-size: 26px;
+}
+
+.nav-link:hover {
+	color: #ffffff;
+	font-weight: 600;
+	border-bottom: 1px solid #ffffff;
+	margin-bottom: -1px;
+}
+
+.navbar i {
+	font-size: 20px;
+	background: black;
+}
+
+.dropdown button {
+	
+}
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+.best-seller {
+	background: black;
+}
+
+/* Carousel base class */
+.carousel {
+  margin-bottom: 4rem;
+  background-color: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3));
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  bottom: 12rem;
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel-item {
+  height: 32rem;
+}
+
+.carousel-item > img {
+  width: 100%;
+  height: 80%;
+  background-size: cover;
+}
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: 400;
+}
+.marketing .col-lg-4 p {
+  margin-right: .75rem;
+  margin-left: .75rem;
+}
+
+.container .fab {
+	font-size: 26px;
+}
+
+/* Featurettes
+------------------------- */
+.featurette {
+	height: 500px;
+}
+
+.featurette-divider {
+  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 800;
+  letter-spacing: -.05rem;
+}
+
+.bg-1 {
+	background: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('../images/sisig.jpg') no-repeat left;
+	background-size: cover;
+}
+
+.bg-1:hover {
+	background-size: transform: scale(1.5);
+}
+
+.bg-2 {
+	background: linear-gradient(to left, rgba(0,0,0,0.5), rgba(0,0,0,0.2)), url('../images/bg-bundle.jpg') no-repeat left;
+	background-size: cover;
+}
+
+.bg-3 {
+	background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('../images/halo-halo.jpg') no-repeat center;
+	background-size: 100% 650px;
+}
+
+.bg-tables {
+	background: url(../images/top-view.jpg) no-repeat;
+	background-size: contain;
+}
+
+.bg-tables .container-fluid {
+	height: 1409px;
+}
+
+.btn.disabled {
+	color: red;
+	filter: grayscale(100%);
+	cursor: default;
+}
+
+.table {
+	background-color: #663300;
+}
+
+.couple {
+	background: url('../images/couple.png') no-repeat center;
+	background-size: contain;
+	width: 121px;
+	height: 316px;
+	margin-top: 18rem;
+	padding: 8rem 0;
+	font-size: 3rem;
+}
+
+.family{
+	background: url('../images/family.png') no-repeat center;
+	background-size: contain;
+	width: 505px;
+	height: 427px;
+	margin-top: 5rem;
+	padding: 10rem 0;
+	font-size: 4rem;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: .25rem;
+}
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+@media (min-width: 62em) {
+  	.featurette-heading {
+    	margin-top: 7rem;
+  	}
+  
+  	.carousel-item > img {
+  		width: 100%;
+  		height: 100%;
+  		background-size: cover;
+  	}
+}
+
+@media (min-width: 50em) {
+  /* Bump up size of carousel content */
+  	.carousel-caption p {
+   	 	margin-bottom: 1.25rem;
+    	font-size: 1.25rem;
+    	line-height: 1.4;
+  	}
+
+  	.featurette-heading {
+   		font-size: 50px;
+  	}
+}
+
+@media only screen and (max-width: 1000px) {
+	.navbar {
+		background-color: rgba(0,0,0,0.8);
+	}
+	
+	.navbar-nav a {
+		margin: 0 5px 0 17px;
+		margin-top: 30px;
+		font-family: 'Montserrat', sans-serif;
+	}
+	
+	.nav-link:hover {
+		border-bottom: none;
+	}
+	
+	body {
+		background-size: cover;
+	}
+}
+
+@media (max-width: 1256px) {
+  	.bg-tables .container-fluid {
+		height: 1150px;
+	}
+
+  	.couple {
+  		width: 100px;
+		height: 300px;
+		padding: 7rem 0;
+		margin-top: 12rem;
+  	}
+
+  	.family {
+  		width: 500px;
+		height: 400px;
+		padding: 10rem 0;
+		margin-top: 3rem;
+  	}
+ }
+
+@media (max-width: 1128px) {
+	.bg-tables .container-fluid {
+		height: 1000px;
+	}
+	.couple {
+  		width:90px;
+		height: 250px;
+		padding: 6rem 0;
+		margin-top: 11rem;
+		font-size: 2rem;
+  	}
+
+  	.family {
+  		width: 480px;
+		height: 350px;
+		padding: 9.5rem 0;
+		margin-top: 3rem;
+		font-size: 2rem;
+  	}
+}
+
+@media (max-width: 978px) {
+	.bg-tables .container-fluid {
+		height: 900px;
+	}
+	.couple {
+  		width:70px;
+		height: 200px;
+		padding: 5rem 0;
+		margin-top: 11rem;
+		font-size: 2rem;
+  	}
+
+  	.family {
+  		width: 400px;
+		height: 300px;
+		padding: 8rem 0;
+		margin-top: 3rem;
+		font-size: 2rem;
+  	}
+}
+
+@media (max-width: 896px) {
+	.bg-tables .container-fluid {
+		height: 830px;
+	}
+	.couple {
+  		width:60px;
+		height: 150px;
+		padding: 3.5rem 0;
+		margin-top: 13rem;
+		font-size: 1.8rem;
+  	}
+
+  .family {
+  		width: 350px;
+		height: 250px;
+		padding: 6.5rem 0;
+		margin-top: 3rem;
+		font-size: 1.8rem;
+  	}
+}
+
+@media (max-width: 820px) {
+	.bg-tables .container-fluid {
+		height: 760px;
+	}
+	.couple {
+		margin-top: 10rem;
+  	}
+}
+
+@media (max-width: 695px) {
+	.bg-tables .container-fluid {
+		height: 650px;
+	}
+	.couple {
+  		width:60px;
+		height: 130px;
+		padding: 3rem 0;
+		margin-top: 8rem;
+		font-size: 1.6rem;
+  	}
+
+  .family {
+  		width: 320px;
+		height: 220px;
+		padding: 6rem 0;
+		margin-top: 3rem;
+		font-size: 1.8rem;
+  	}
+}
+
+@media (max-width: 555px) {
+	.bg-tables .container-fluid {
+		height: 510px;
+	}
+	.couple {
+  		width:50px;
+		height: 100px;
+		padding: 2rem 0;
+		margin-top: 7rem;
+		font-size: 1.5rem;
+  	}
+
+  .family {
+  		width: 250px;
+		height: 180px;
+		padding: 4.5rem 0;
+		margin-top: 2rem;
+		font-size: 1.5rem;
+  	}	
+}
+
+@media (max-width: 500px) {
+	.bg-tables .container-fluid {
+		height: 460px;
+	}
+	.couple {
+  		width:40px;
+		height: 80px;
+		padding: 1.8rem 0;
+		margin-top: 6rem;
+		font-size: 1rem;
+  	}
+
+  .family {
+  		width: 200px;
+		height: 150px;
+		padding: 3.8rem 0;
+		margin-top: 2rem;
+		font-size: 1.5rem;
+  	}	
+}
+
+@media (max-width: 400px) {
+	.bg-tables {
+		background-position: center;
+		background-size: cover;
+	}
+
+	.bg-tables .container-fluid {
+		height: 400px;
+	}
+	.couple {
+		background-size: 100% 100%;
+  		width:120px;
+		height: 90px;
+		padding: 2.2rem 0;
+		margin-top: 5rem;
+		font-size: .8rem;
+	  	}
+
+	.family {
+  		width: 200px;
+		height: 150px;
+		padding: 3.8rem 0;
+		margin-top: 10px;
+		font-size: 1.5rem;
+  	}
+}

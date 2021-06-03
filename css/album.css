@@ -1,0 +1,92 @@
+.album {
+	background: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(../images/bg-menu1.jpg) no-repeat left;
+	background-size: cover;
+}
+
+* {
+	font-family: 'Montserrat', sans-serif;
+} 
+
+.navbar-nav a {
+	color: #ffffff;
+	margin: 0 20px;
+}
+
+.navbar-toggler {
+	color: #ffffff;
+	border: none !important;
+	border: none !important;
+	outline: none !important;
+}
+
+.navbar-toggler .fa {
+	color: #ffffff;
+	font-size: 26px;
+}
+
+.nav-link:hover {
+	color: #ffffff;
+	font-weight: 600;
+	border-bottom: 1px solid #ffffff;
+	margin-bottom: -1px;
+}
+
+.jumbotron {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin-bottom: 0;
+  background-color: #fff;
+}
+
+
+.nav-tabs li {
+	padding: 15px;
+}
+
+.nav-tabs li a {
+	color: #000;
+	text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron h1 {
+  font-weight: 300;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+}
+
+.pagination .active {
+	fill: darkred;
+	color: white;
+}
+
+.container .fab {
+	font-size: 26px;
+}
+
+.card:hover {
+  transform: translateY(-15px);
+  transition: 0 50s ease-in-out;
+  box-shadow: 10px 20px 20px 10px rgba(0, 0, 0, 1);
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: .25rem;
+}

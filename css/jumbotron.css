@@ -1,0 +1,51 @@
+/* Move down content because we have a fixed navbar that is 3.5rem tall */
+body {
+  padding-top: 3.5rem;
+}
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container .fab {
+  font-size: 26px;
+}
+
+/* -- NAVBAR -- */
+.navbar-nav a {
+	color: #ffffff;
+	margin: 0 20px;
+}
+
+.navbar-toggler {
+	color: #ffffff;
+	border: none !important;
+	border: none !important;
+	outline: none !important;
+}
+
+.navbar-toggler .fas {
+	color: #ffffff;
+	font-size: 26px;
+}
+
+.nav-link:hover {
+	color: #ffffff;
+	font-weight: 600;
+	border-bottom: 1px solid #ffffff;
+	margin-bottom: -1px;
+}
+
+.navbar i {
+	font-size: 20px;
+}
+
+.dropdown button {
+	
+}
+
+.jumbotron {
+	height: 20em;
+	background: url('../images/logo_transparent.png') no-repeat center top;
+	background-size: 25% 100%;
+}

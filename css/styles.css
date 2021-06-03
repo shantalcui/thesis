@@ -1,0 +1,149 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Montserrat', sans-serif;
+}
+
+body {
+	display: -ms-flexbox;
+	display: flex;
+	background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url('../images/bg-home.jpg') no-repeat center;
+	height: 100vh;
+	background-size: cover;
+}
+
+/* -- NAVBAR -- */
+.navbar-nav a {
+	color: #ffffff;
+	margin: 0 20px;
+	margin-top: 30px;
+}
+
+.navbar-toggler {
+	color: #ffffff;
+	border: none !important;
+	border: none !important;
+	outline: none !important;
+}
+
+.navbar-toggler .fa {
+	color: #ffffff;
+	font-size: 26px;
+}
+
+.nav-link:hover {
+	color: #ffffff;
+	font-weight: 600;
+	border-bottom: 1px solid #ffffff;
+	margin-bottom: -1px;
+}
+
+/* -- LOGIN -- */
+.login_box {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 400px;
+	background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.9)), url(bg-admin.jpg);
+	background-size: cover;
+	padding: 40px;
+	border-radius: 0;
+	box-shadow: 0 15px 25px rgba(0,0,0,0.6);
+}
+
+.login_box h2{
+	margin: 0 0 30px;
+	letter-spacing: 4px;
+	padding: 0;
+	color: #fff;
+	text-align: center;
+}
+
+.login_box .input-group {
+	position: relative;
+}
+
+.login_box .input-group input{
+	width: 100%;
+	padding: 10px;
+	font-size: 16px;
+	color: #fff;
+	margin-bottom: 30px;
+	border: none;
+	border-bottom: 1px solid #fff;
+	outline: none;
+	background-color: transparent;
+}
+
+.login_box .input-group label {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 10px;
+	font-size: 16px;
+	color: #fff;
+	pointer-events: none;
+	transition: 0.5s;
+}
+
+.login_box .input-group input:focus ~ label,
+.login_box .input-group input:valid ~ label{
+	top: -20px;
+	color: #fff;
+	font-size: 12px;
+}
+
+.login_box form .btn{
+	display: inline-block;
+	padding: 10px 20px;
+	color: #fff;
+	font-size: 14px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	background-color: #c40000;
+}
+
+.login_box form .btn:hover {
+	background-color: #c40000;
+	color: #fff;
+	box-shadow: 0 0 5px #c40000, 0 0 25px #c40000, 0 0 50px #c40000, 0 0 100px #c40000;
+}
+
+.login_box form a {
+	font-size: 12px;
+}
+
+.card {
+	position: relative;
+	width:300px;
+	height: 400px;
+	align-items: center;
+}
+
+.card .card-img-top {
+	width: 200px;
+	
+}
+
+.quantity label, input {
+	font-size: 14px;
+}
+
+.logo {
+	width: 200px;
+	position: absolute;
+	top: -45%;
+	left: 25%;
+}
+
+.d-flex {
+	align-items: center;
+}
+
+@media (min-width: 62em) {
+}
+
+@media only screen and (max-width: 1000px) {
+	
+}
