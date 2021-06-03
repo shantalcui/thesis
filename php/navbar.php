@@ -120,7 +120,7 @@ if (isset($_POST['logout'])) {
 			text: "Thank You Come Again",
 			icon: "success",
 		}).then(function() {
-			window.location = "front.php";
+			window.location = "index.php";
 		});
 	</script>
 
@@ -180,7 +180,7 @@ if (isset($_POST['logout'])) {
 		}
 	}
 	if ($con->query($table_sql) === TRUE) {
-		header("location:front.php");
+		header("location:index.php");
 		session_destroy();
 	} else {
 		echo "Error updating record: " . $con->error;
