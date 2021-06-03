@@ -76,7 +76,7 @@ if (mysqli_num_rows($tblreserve) > 0) {
   <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/checkout/">
 
   <!-- Bootstrap core CSS -->
-  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
     .bd-placeholder-img {
@@ -95,7 +95,7 @@ if (mysqli_num_rows($tblreserve) > 0) {
     }
   </style>
   <!-- Custom styles for this template -->
-  <link href="./css/form-validation.css" rel="stylesheet">
+  <link href="css/form-validation.css" rel="stylesheet">
 </head>
 
 <body class="bg-dark text-white">

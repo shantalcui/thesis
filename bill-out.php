@@ -15,14 +15,12 @@ foreach ($_SESSION['user'] as $uid) {
 }
 
 $cancel = "SELECT * FROM orders WHERE   order_username ='$uname' and order_status='Served'";
-          $cancelresult = $con->query($cancel);
-        
-        if (mysqli_num_rows($cancelresult) > 0) {
+$cancelresult = $con->query($cancel);
 
-         
-        } else {
-          header("location:main_cart.php");
-        }
+if (mysqli_num_rows($cancelresult) > 0) {
+} else {
+  header("location:main_cart.php");
+}
 
 ?>
 
@@ -45,7 +43,7 @@ $cancel = "SELECT * FROM orders WHERE   order_username ='$uname' and order_statu
   <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/checkout/">
 
   <!-- Bootstrap core CSS -->
-  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
     .bd-placeholder-img {
@@ -86,9 +84,9 @@ $cancel = "SELECT * FROM orders WHERE   order_username ='$uname' and order_statu
 
 
 
-         
 
-          
+
+
         </ul>
 
 
@@ -118,10 +116,10 @@ $cancel = "SELECT * FROM orders WHERE   order_username ='$uname' and order_statu
         }
         ?>
 
-   
-            
-           
-         
+
+
+
+
 
         <li>
 
@@ -153,12 +151,12 @@ $cancel = "SELECT * FROM orders WHERE   order_username ='$uname' and order_statu
                 <div class="modal-body row">
 
                   <button type="submit" class="btn btn-large col" name="cash">
-                    <span><img src="https://img.icons8.com/plasticine/70/ffffff/money.png"/></span>
+                    <span><img src="https://img.icons8.com/plasticine/70/ffffff/money.png" /></span>
                     <br>
                     <span>Cash</span>
                   </button>
                   <button type="submit" class="btn btn-large col" name="card">
-                    <span><img src="https://img.icons8.com/bubbles/70/000000/bank-card-back-side.png"/></span>
+                    <span><img src="https://img.icons8.com/bubbles/70/000000/bank-card-back-side.png" /></span>
                     <br>
                     <span>Card</span>
                   </button>
@@ -168,149 +166,144 @@ $cancel = "SELECT * FROM orders WHERE   order_username ='$uname' and order_statu
 
             <?php
 
-            
+
             if (isset($_POST['cash'])) {
-                $pointsuser="SELECT * FROM users WHERE user_id=$get";
-                $pointsuserresult=mysqli_query($con,$pointsuser);
-                $pointrow = mysqli_fetch_assoc($pointsuserresult);
-                $change=$_SESSION['gtotal'];
+              $pointsuser = "SELECT * FROM users WHERE user_id=$get";
+              $pointsuserresult = mysqli_query($con, $pointsuser);
+              $pointrow = mysqli_fetch_assoc($pointsuserresult);
+              $change = $_SESSION['gtotal'];
 
-               if ($pointrow['user_points']>0) {
+              if ($pointrow['user_points'] > 0) {
 
-              
 
-              $ququ = "UPDATE user_tables SET user_payment='Cash',utable_change='$change' WHERE utable_Status='Reserved'and utable_user_id='$get'";
-              $tresult = mysqli_query($con, $ququ);
+
+                $ququ = "UPDATE user_tables SET user_payment='Cash',utable_change='$change' WHERE utable_Status='Reserved'and utable_user_id='$get'";
+                $tresult = mysqli_query($con, $ququ);
             ?>
-              <script type="text/javascript">
-                swal({
-                  title: "You Have Points of ₱<?php echo$pointrow['user_points'];?>",
-                  text: "Do you want to use your Points?",
-                  icon: "warning",
-                buttons: ["No", "Yes"],
-                })
-                .then((willDelete) => {
-                if (willDelete) {
-                 swal("Points use", {
-                  icon: "success",
+                <script type="text/javascript">
+                  swal({
+                      title: "You Have Points of ₱<?php echo $pointrow['user_points']; ?>",
+                      text: "Do you want to use your Points?",
+                      icon: "warning",
+                      buttons: ["No", "Yes"],
+                    })
+                    .then((willDelete) => {
+                      if (willDelete) {
+                        swal("Points use", {
+                          icon: "success",
+                        });
+
+                        var xmlhttp = new XMLHttpRequest();
+
+
+
+                        xmlhttp.open("GET", "./php/yes.php", true);
+                        xmlhttp.send();
+
+
+                      } else {
+                        swal("Points Not Use", {
+                          icon: "error",
+                        });
+                        var xmlhttp = new XMLHttpRequest();
+
+
+
+                        xmlhttp.open("GET", "./php/no.php", true);
+                        xmlhttp.send();
+                      }
+                    });
+                </script>
+              <?php
+              } else {
+
+
+                $ququ = "UPDATE user_tables SET user_payment='Cash',utable_change='$change' WHERE utable_Status='Reserved'and utable_user_id='$get'";
+                $tresult = mysqli_query($con, $ququ);
+              ?>
+                <script type="text/javascript">
+                  swal({
+                    title: "Pay with Cash!",
+                    text: "Please ready your cash and wait for an employee.",
+                    icon: "success",
                   });
-
-                var xmlhttp = new XMLHttpRequest();
-                
-                
-                
-                xmlhttp.open("GET", "./php/yes.php", true);
-                xmlhttp.send();
-
-                
-                } else {
-                  swal("Points Not Use",{
-                    icon: "error",
-                  });
-                  var xmlhttp = new XMLHttpRequest();
-                
-                
-                
-                xmlhttp.open("GET", "./php/no.php", true);
-                xmlhttp.send();
-                }
-              });
-                            
-                            </script>
-             <?php
-                } 
-
-              else{
-              
-
-              $ququ = "UPDATE user_tables SET user_payment='Cash',utable_change='$change' WHERE utable_Status='Reserved'and utable_user_id='$get'";
-              $tresult = mysqli_query($con, $ququ);
-            ?>
-              <script type="text/javascript">
-                swal({
-                  title: "Pay with Cash!",
-                  text: "Please ready your cash and wait for an employee.",
-                  icon: "success",
-                });
-              </script>
+                </script>
 
 
 
 
             <?php
+              }
             }
-          }
 
             ?>
             <?php
 
             if (isset($_POST['card'])) {
-               $pointsuser="SELECT * FROM users WHERE user_id=$get";
-                $pointsuserresult=mysqli_query($con,$pointsuser);
-                $pointrow = mysqli_fetch_assoc($pointsuserresult);
+              $pointsuser = "SELECT * FROM users WHERE user_id=$get";
+              $pointsuserresult = mysqli_query($con, $pointsuser);
+              $pointrow = mysqli_fetch_assoc($pointsuserresult);
 
-              if ($pointrow['user_points']>0) {
+              if ($pointrow['user_points'] > 0) {
 
-              
 
-              $ququ1 = "UPDATE user_tables SET user_payment='Paying' WHERE utable_Status='Reserved'and utable_user_id='$get'";
-              $tresult1 = mysqli_query($con, $ququ1);
+
+                $ququ1 = "UPDATE user_tables SET user_payment='Paying' WHERE utable_Status='Reserved'and utable_user_id='$get'";
+                $tresult1 = mysqli_query($con, $ququ1);
             ?>
-              <script type="text/javascript">
-                swal({
-                  title: "You Have Points of ₱<?php echo$pointrow['user_points'];?>",
-                  text: "Do you want to use your Points?",
-                  icon: "warning",
-                buttons: ["No", "Yes"],
-                })
-                .then((willDelete) => {
-                if (willDelete) {
-                 swal("Points use", {
-                  icon: "success",
+                <script type="text/javascript">
+                  swal({
+                      title: "You Have Points of ₱<?php echo $pointrow['user_points']; ?>",
+                      text: "Do you want to use your Points?",
+                      icon: "warning",
+                      buttons: ["No", "Yes"],
+                    })
+                    .then((willDelete) => {
+                      if (willDelete) {
+                        swal("Points use", {
+                          icon: "success",
+                        });
+
+                        var xmlhttp = new XMLHttpRequest();
+
+
+
+                        xmlhttp.open("GET", "./php/yes.php", true);
+                        xmlhttp.send();
+
+
+                      } else {
+                        swal("Points Not Use", {
+                          icon: "error",
+                        });
+                        var xmlhttp = new XMLHttpRequest();
+
+
+
+                        xmlhttp.open("GET", "./php/no.php", true);
+                        xmlhttp.send();
+
+                      }
+                    });
+                </script>
+              <?php
+              } else {
+
+
+
+                $ququ1 = "UPDATE user_tables SET user_payment='Paying' WHERE utable_Status='Reserved'and utable_user_id='$get'";
+                $tresult1 = mysqli_query($con, $ququ1);
+              ?>
+                <script type="text/javascript">
+                  swal({
+                    title: "Pay with Card!",
+                    text: "Click The Card Button.",
+                    icon: "success",
                   });
-
-                var xmlhttp = new XMLHttpRequest();
-                
-                
-                
-                xmlhttp.open("GET", "./php/yes.php", true);
-                xmlhttp.send();
-
-                
-                } else {
-                  swal("Points Not Use",{
-                    icon: "error",
-                  });
-                  var xmlhttp = new XMLHttpRequest();
-                
-                
-                
-                xmlhttp.open("GET", "./php/no.php", true);
-                xmlhttp.send();
-
-                }
-              });
-                            
-                            </script>
-             <?php
-                }
-                else{ 
-
-              
-
-              $ququ1 = "UPDATE user_tables SET user_payment='Paying' WHERE utable_Status='Reserved'and utable_user_id='$get'";
-              $tresult1 = mysqli_query($con, $ququ1);
-            ?>
-              <script type="text/javascript">
-                swal({
-                  title: "Pay with Card!",
-                  text: "Click The Card Button.",
-                  icon: "success",
-                });
-              </script>
+                </script>
 
             <?php
-            }
+              }
             }
 
             ?>
@@ -338,107 +331,96 @@ $cancel = "SELECT * FROM orders WHERE   order_username ='$uname' and order_statu
 <script src="sweetalert2/dist/sweetalert2.all.min.js"></script>
 
 </html>
- <script>
-function mydiscount() {
-  
-  
-                  swal({
-                  title: "Verifying",
-                  text: "Please wait for an employee.",
-                  icon: "success",
-                });
+<script>
+  function mydiscount() {
 
-                   var xmlhttp = new XMLHttpRequest();
-                
-                
-                
-                xmlhttp.open("GET", "./php/verify.php", true);
-                xmlhttp.send();
-    
-  
-}
+
+    swal({
+      title: "Verifying",
+      text: "Please wait for an employee.",
+      icon: "success",
+    });
+
+    var xmlhttp = new XMLHttpRequest();
+
+
+
+    xmlhttp.open("GET", "./php/verify.php", true);
+    xmlhttp.send();
+
+
+  }
 </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <script>
-   function bill_show()
- {
-                    $.post( "billshow.php", function( shows ) {
+  function bill_show() {
+    $.post("billshow.php", function(shows) {
 
-                        if(shows == "Cash")
-                        {
-                             swal({
-                              title: 'RECEIPT',
-                              text: 'Click ok to proceed to receipt!',
-                              icon: 'info',
-                            }).then(function(){
+      if (shows == "Cash") {
+        swal({
+          title: 'RECEIPT',
+          text: 'Click ok to proceed to receipt!',
+          icon: 'info',
+        }).then(function() {
 
-                              window.location="main_receipt.php";
-                            });
-                              var bill_show_done = new XMLHttpRequest();
-    
-                              bill_show_done.open("GET", "./php/billshow_off.php", true);
-                              bill_show_done.send();
-                            
-                        }
+          window.location = "main_receipt.php";
+        });
+        var bill_show_done = new XMLHttpRequest();
 
-                    });
-                }
+        bill_show_done.open("GET", "./php/billshow_off.php", true);
+        bill_show_done.send();
 
-                var bill_show_validateSession = setInterval(bill_show, 1000);
+      }
 
+    });
+  }
 
+  var bill_show_validateSession = setInterval(bill_show, 1000);
 </script>
 
 <script>
+  function blocking_bill_out() {
+    $.post("block.php", function(data) {
+
+      if (data == "block") {
+        swal({
+          title: 'Block',
+          text: 'You Are Now Block!',
+          icon: 'warning',
+        }).then(function() {
+
+          window.location = "bill-out.php";
+        });
+
+      }
+
+    });
+  }
+
+  var validateSession = setInterval(blocking_bill_out, 1000);
 
 
+  function billingdones() {
+    $.post("./php/billingdone.php", function(data) {
 
-   function blocking_bill_out()
-                {
-                    $.post( "block.php", function( data ) {
+      if (data == "yes") {
+        swal({
+          title: 'Transaction is over!',
+          text: 'Cant go Back',
+          icon: 'warning',
+        }).then(function() {
 
-                        if(data == "block")
-                        {
-                             swal({
-                              title: 'Block',
-                              text: 'You Are Now Block!',
-                              icon: 'warning',
-                            }).then(function(){
+          window.location = "main_receipt.php";
+        });
 
-                              window.location="bill-out.php";
-                            });
-                            
-                        }
+      }
 
-                    });
-                }
+    });
+  }
 
-                var validateSession = setInterval(blocking_bill_out, 1000);
-
-
-function billingdones()
-                {
-                    $.post( "./php/billingdone.php", function( data ) {
-
-                        if(data == "yes")
-                        {
-                               swal({
-                              title: 'Transaction is over!',
-                              text: 'Cant go Back',
-                              icon: 'warning',
-                            }).then(function(){
-
-                              window.location="main_receipt.php";
-                            });
-                            
-                        }
-
-                    });
-                }
-
- var billingSession = setInterval(billingdones, 1000);
+  var billingSession = setInterval(billingdones, 1000);
 </script>
 
 

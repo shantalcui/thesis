@@ -19,11 +19,10 @@ if ($id > 0) {
 if (isset($_POST['unblock'])) {
 
     if ($_GET['action'] == 'block') {
-    $userid=$_GET['id'];
-    $unblocksql="UPDATE users  SET user_block='Not Blocked' WHERE user_id=$userid";
-    $unblocksqlresult = $con->query($unblocksql);
+        $userid = $_GET['id'];
+        $unblocksql = "UPDATE users  SET user_block='Not Blocked' WHERE user_id=$userid";
+        $unblocksqlresult = $con->query($unblocksql);
     }
-    
 }
 
 
@@ -35,8 +34,8 @@ if (isset($_POST['unblock'])) {
 
 <head>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <script src="sweetalert2/dist/sweetalert2.all.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script>
+    <script src="sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -50,7 +49,7 @@ if (isset($_POST['unblock'])) {
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
 
     <!-- Bootstrap core CSS -->
-    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
         .bd-placeholder-img {
@@ -155,31 +154,26 @@ if (isset($_POST['unblock'])) {
                             </tr>
                         </thead>
                         <tbody>
-                       <?php
-                          $selectuse="SELECT * FROM users WHERE user_guest=''";
-                          $selectuseresult = $con->query($selectuse);
-                          while ($row = mysqli_fetch_assoc($selectuseresult)) {
-                             if($row['user_block']=='block'){
-                                        $color="text-danger";
-                                        $disable="";
-                                        $button="submit";
-                                        
-          
+                            <?php
+                            $selectuse = "SELECT * FROM users WHERE user_guest=''";
+                            $selectuseresult = $con->query($selectuse);
+                            while ($row = mysqli_fetch_assoc($selectuseresult)) {
+                                if ($row['user_block'] == 'block') {
+                                    $color = "text-danger";
+                                    $disable = "";
+                                    $button = "submit";
+                                } else {
+
+                                    $color = "text-success";
+                                    $disable = "disabled";
+                                    $button = "button";
+                                }
+                                blockaccount($row['user_firstname'], $color, $row['user_block'], $disable, "Unblock", $button, $row['user_id']);
                             }
+                            ?>
 
-                            else{
-          
-                                        $color="text-success";
-                                        $disable="disabled";
-                                        $button="button";
-                                        
-                          }
-                          blockaccount($row['user_firstname'],$color,$row['user_block'],$disable,"Unblock",$button,$row['user_id']);
-                          }
-                        ?>
-                            
 
-                        
+
                         </tbody>
                     </table>
                 </div>
@@ -205,66 +199,63 @@ if (isset($_POST['unblock'])) {
 
 
 <script>
-
-$(document).ready(function() {
-
-
-    function tabledata() {
-      $.ajax({
-        type: 'POST',
-        url: './php/tablecount.php',
-        success: function(data) {
-          $('#table').html(data);
-        }
-      });
-    }
-    tabledata();
-    setInterval(function() {
-      tabledata();
-    }, 1000); // it will refresh your data every 1 sec
-
-  });
-$(document).ready(function() {
+    $(document).ready(function() {
 
 
-    function ordercount() {
-      $.ajax({
-        type: 'POST',
-        url: './php/ordercount.php',
-        success: function(data) {
-          $('#order').html(data);
-        }
-      });
-    }
-    ordercount();
-    setInterval(function() {
-      ordercount();
-    }, 1000); // it will refresh your data every 1 sec
-
-  });
-
- function noticetable()
-                {
-                    $.post( "./php/notice_reserved.php", function( rnt ) {
-
-                        if(rnt == "Reserved")
-                        {
-                             swal({
-                              title: 'A Table has been Reserved',
-                              text: 'Check',
-                              icon: 'info',
-                            })
-                             var notice_done = new XMLHttpRequest();
-    
-                              notice_done.open("GET", "./php/notice.php", true);
-                              notice_done.send();
-                            
-                             
-                            
-                        }
-
-                    });
+        function tabledata() {
+            $.ajax({
+                type: 'POST',
+                url: './php/tablecount.php',
+                success: function(data) {
+                    $('#table').html(data);
                 }
+            });
+        }
+        tabledata();
+        setInterval(function() {
+            tabledata();
+        }, 1000); // it will refresh your data every 1 sec
 
- var n = setInterval(noticetable, 1000);
+    });
+    $(document).ready(function() {
+
+
+        function ordercount() {
+            $.ajax({
+                type: 'POST',
+                url: './php/ordercount.php',
+                success: function(data) {
+                    $('#order').html(data);
+                }
+            });
+        }
+        ordercount();
+        setInterval(function() {
+            ordercount();
+        }, 1000); // it will refresh your data every 1 sec
+
+    });
+
+    function noticetable() {
+        $.post("./php/notice_reserved.php", function(rnt) {
+
+            if (rnt == "Reserved") {
+                swal({
+                    title: 'A Table has been Reserved',
+                    text: 'Check',
+                    icon: 'info',
+                })
+                var notice_done = new XMLHttpRequest();
+
+                notice_done.open("GET", "./php/notice.php", true);
+                notice_done.send();
+
+
+
+            }
+
+        });
+    }
+
+    var n = setInterval(noticetable, 1000);
 </script>
