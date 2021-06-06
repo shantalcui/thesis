@@ -278,9 +278,9 @@ while ($rowzsx = mysqli_fetch_assoc($wresult)) {
   </div>
 
   <script>
-    window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')
+    window.jQuery || document.write('<script src="assets/js/vendor/jquery.slim.min.js"><\/script>')
   </script>
-  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
 
   <script src="./js/dashboard.js"></script>
